@@ -1,0 +1,29 @@
+{
+  "name": "covid19-pakistan",
+  "version": "0.0.1",
+  "description": "Quick and easy way to get covid-19 in Pakistan updates.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShahrozTanveer/covid19-pakistan.git"
+  },
+  "keywords": [
+    "npm",
+    "covid-19",
+    "pakistan",
+    "corona-virus",
+    "corona",
+    "pakistan-npm",
+    "npm-corona",
+    "covid19-pakistan",
+    "covid19-pk",
+    "covid-19-pakistan",
+    "corona-pakistan"
+  ],
+  "author": "Sharoz Tanveer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShahrozTanveer/covid19-pakistan/issues"
+  },
+  "homepage": "https://github.com/ShahrozTanveer/covid19-pakistan#readme"
+}
