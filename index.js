@@ -1,0 +1,1 @@
+module.exports.about = "this is covid19-pakistan package"
