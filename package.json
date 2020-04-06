@@ -25,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/ShahrozTanveer/covid19-pakistan/issues"
   },
-  "homepage": "https://github.com/ShahrozTanveer/covid19-pakistan#readme"
+  "homepage": "https://github.com/ShahrozTanveer/covid19-pakistan#readme",
+  "dependencies": {
+    "csv-parse": "^4.8.8",
+    "csvtojson": "^2.0.10",
+    "download-git-repo": "^3.0.2"
+  }
 }
