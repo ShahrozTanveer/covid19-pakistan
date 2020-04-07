@@ -25,7 +25,7 @@ function downloadData(){
 }
 async function getData(){
     const data=await csvToJson();
-    console.log(data);
+    // console.log(data);
     return data
 }
 
