@@ -23,16 +23,28 @@ function downloadData(){
 
 
 }
+downloadData()
 async function getData(){
     const data=await csvToJson();
-    // console.log(data);
     return data
 }
+
+async function getLatestData(data){
+   
+    const size =data.length
+    return [
+        data[size-7],data[size-6],data[size-5],data[size-4],data[size-3],data[size-2],data[size-1]
+    ]
+}
+
+
+
 
 
 module.exports={
     about : "this is covid19-pakistan package",
     getData:getData,
-    downloadData:downloadData
+    downloadData:downloadData,
+    getLatestData:getLatestData
    
 }
