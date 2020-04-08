@@ -16,8 +16,6 @@ function downloadData(){
         else{
             console.log("updated");
         }
-
-
     })
    
 
