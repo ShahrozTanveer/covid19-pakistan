@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/ShahrozTanveer/covid19-pakistan.git"
   },
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
   "keywords": [
     "npm",
     "covid-19",
@@ -27,7 +30,6 @@
   },
   "homepage": "https://github.com/ShahrozTanveer/covid19-pakistan#readme",
   "dependencies": {
-    "csv-parse": "^4.8.8",
     "csvtojson": "^2.0.10",
     "download-git-repo": "^3.0.2"
   }
