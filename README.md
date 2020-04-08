@@ -14,13 +14,16 @@ npm i covid19-pakistan
 
 ## Examples
 ```javascript
-const covid19 = require('covid19-pakistan')
-async function example(){
-    const data=await covid19.getData()
-    const latestData=await covid19.getLatestData(data)
+const data=await covid19.getData()
+    const latestData = await covid19.getLatestData(data)
     console.log(latestData);
+    const latestStats = await covid19.getTotalStats()
+    console.log("Latest Stats");
+    console.log(latestStats);
+
 }
 example()
 ```
-**getData()** methdod will return array of covid-19 for Pakistan data.\
-**getLatestData()** method requires parameter( array data returned by getData() method ),It will return data of lastest day.
+**getData()** methdod will return array of Objects containing covid-19 for Pakistan data.\
+**getLatestData()** method requires parameter( array data returned by getData() method ),It will return data of lastest day.\
+**getTotalStats()** method will return Object that will contain latest stats of covid-19 (Pakistan)
