@@ -14,7 +14,8 @@ npm i covid19-pakistan
 
 ## Examples
 ```javascript
-const data=await covid19.getData()
+async function example() {
+    const data=await covid19.getData()
     const latestData = await covid19.getLatestData(data)
     console.log(latestData);
     const latestStats = await covid19.getTotalStats()
