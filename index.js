@@ -3,6 +3,7 @@ const csv = require('csvtojson')
 const csvFilePath = __dirname + '/data/covid-19-pakistan-data.csv'
 const dataDir = __dirname + '/data'
 const gitRepo = 'ShahrozTanveer/covid-19-pakistan'
+
 async function csvToJson() {
     const jsonArray = await csv().fromFile(csvFilePath);
     return jsonArray
@@ -64,6 +65,15 @@ async function getTotalStats() {
 
 
 }
+async function getStatsByState(state){
+    const data=await getData()
+    const latestData = await getLatestData(data)    
+    const stateData=latestData.filter((element)=>{
+        return element.province === state.toUpperCase()
+    })
+
+    return (stateData.length)? (stateData):("Invalid Stated passed")
+}
 
 
 
@@ -72,6 +82,7 @@ module.exports = {
     getData: getData,
     downloadData: downloadData,
     getLatestData: getLatestData,
-    getTotalStats:getTotalStats
+    getTotalStats:getTotalStats,
+    getStatsByState:getStatsByState
 
 }

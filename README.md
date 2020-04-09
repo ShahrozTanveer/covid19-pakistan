@@ -15,16 +15,23 @@ npm i covid19-pakistan
 ## Examples
 ```javascript
 async function example() {
-    const data=await covid19.getData()
+    //fetching latest dataset from github
+    const data=await covid19.getData()//contains whole dataset
+
     const latestData = await covid19.getLatestData(data)
-    console.log(latestData);
+    console.log(latestData);//just contains today's data
+
+    //fetching latest stats 
     const latestStats = await covid19.getTotalStats()
-    console.log("Latest Stats");
     console.log(latestStats);
+    //fetching stats by state nameS
+    let state = await covid19.getStatsByState("punjab")
+    console.log(state);
 
 }
 example()
 ```
 **getData()** methdod will return array of Objects containing covid-19 for Pakistan data.\
 **getLatestData()** method requires parameter( array data returned by getData() method ),It will return data of lastest day.\
-**getTotalStats()** method will return Object that will contain latest stats of covid-19 (Pakistan)
+**getTotalStats()** method will return Object that will contain latest stats of covid-19 (Pakistan)\
+**getStatsByState()** method requires state name and it will return object containg data of provided state.
