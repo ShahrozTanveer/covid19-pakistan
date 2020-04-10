@@ -24,9 +24,12 @@ async function example() {
     //fetching latest stats 
     const latestStats = await covid19.getTotalStats()
     console.log(latestStats);
-    //fetching stats by state nameS
+    //fetching stats by state name
     let state = await covid19.getStatsByState("punjab")
     console.log(state);
+     //fetching stats by date format(dd-mm-yyyy)
+    let byDate = await covid19.getDataByDate("06-04-2020")
+    console.log(byDate);
 
 }
 example()
@@ -34,4 +37,5 @@ example()
 **getData()** methdod will return array of Objects containing covid-19 for Pakistan data.\
 **getLatestData()** method requires parameter( array data returned by getData() method ),It will return data of lastest day.\
 **getTotalStats()** method will return Object that will contain latest stats of covid-19 (Pakistan)\
-**getStatsByState()** method requires state name and it will return object containg data of provided state.
+**getStatsByState()** method requires state name and it will return object containg data of provided state.\
+**getDataByDate()** method requires date in format (dd-mm-yyyy) and it will return data from that given date.

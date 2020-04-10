@@ -75,7 +75,16 @@ async function getStatsByState(state){
     return (stateData.length)? (stateData):("Invalid Stated passed")
 }
 
+async function getDataByDate(date){
+    const data=await getData()
+       
+    const byDateData=data.filter((element)=>{
+        
+        return element.date === date 
+    })
 
+    return (byDateData.length)? (byDateData):("Invalid Date passed")
+}
 
 module.exports = {
     about: "this is covid19-pakistan package",
@@ -83,6 +92,7 @@ module.exports = {
     downloadData: downloadData,
     getLatestData: getLatestData,
     getTotalStats:getTotalStats,
-    getStatsByState:getStatsByState
+    getStatsByState:getStatsByState,
+    getDataByDate:getDataByDate
 
 }

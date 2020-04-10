@@ -9,9 +9,12 @@ async function test() {
     //fetching latest stats 
     const latestStats = await covid19.getTotalStats()
     console.log(latestStats);
-    //fetching stats by state nameS
-    let state = await covid19.getStatsByState("punjab")
-    console.log(state);
+    //fetching stats by state name
+    let byState = await covid19.getStatsByState("punjab")
+    console.log(byState);
+    //fetching stats by date format(dd-mm-yyyy)
+    let byDate = await covid19.getDataByDate("06-04-2020")
+    console.log(byDate);
 
 
 }
