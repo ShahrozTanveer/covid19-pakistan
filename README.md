@@ -14,6 +14,7 @@ npm i covid19-pakistan
 
 ## Examples
 ```javascript
+const covid19 = require('covid19-pakistan')
 async function example() {
     //fetching latest dataset from github
     const data=await covid19.getData()//contains whole dataset
@@ -23,13 +24,13 @@ async function example() {
 
     //fetching latest stats 
     const latestStats = await covid19.getTotalStats()
-    console.log(latestStats);
+    console.log(latestStats)
     //fetching stats by state name
     let state = await covid19.getStatsByState("punjab")
-    console.log(state);
+    console.log(state)
      //fetching stats by date format(dd-mm-yyyy)
     let byDate = await covid19.getDataByDate("06-04-2020")
-    console.log(byDate);
+    console.log(byDate)
 
 }
 example()
