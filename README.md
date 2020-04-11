@@ -2,7 +2,7 @@
 [![NPM version](https://img.shields.io/npm/v/covid19-pakistan)](https://www.npmjs.com/package/covid19-pakistan)
 [![NPM Downloads](https://img.shields.io/npm/dt/covid19-pakistan.svg)](https://www.npmjs.com/covid19-pakistan)
 
-# covid19-pakistan
+# covid19-pakistan  v1.0.0(stable)🚀
 ## Import the latest Pakistan Covid-19 data in Javascript
 ### Get Latest Covid-19 Pakistan Data: https://github.com/ShahrozTanveer/covid-19-pakistan
 Quick and easy way to get covid-19 in Pakistan updates.\

@@ -9,7 +9,10 @@ async function csvToJson() {
     return jsonArray
 }
 
+
 function downloadData() {
+
+ console.log("updating");
     download(gitRepo, dataDir, (err) => {
         if (err) {
             console.log(err)
@@ -17,16 +20,30 @@ function downloadData() {
         } else {
             console.log("updated");
         }
+   
 
     })
 
 
 
 }
-downloadData()
+
+
+
+function sleep(ms) {
+    
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 async function getData() {
-    const data = await csvToJson();
-    return data
+    downloadData()
+    
+    return await sleep(3000)
+    .then(async() => {
+            const data = await csvToJson();
+            return data
+    })
+    
+   
 }
 
 async function getLatestData(data) {
@@ -48,42 +65,47 @@ async function getTotalStats() {
 
 
     latestData.forEach(element => {
-        
+
         totalCases += parseInt(element['total_cases'])
         totalActiveCases += parseInt(element['active'])
         totalRecovered += parseInt(element['recovered'])
         totalDeaths += parseInt(element['deaths'])
     })
-
+    const mortalityRate= (((totalDeaths/totalCases)*100).toFixed(1))+"%"
+ 
+    const recoveryRate= (((totalRecovered/totalCases)*100).toFixed(1))+"%"
+    
     return {
         "date": date,
         "cases": totalCases,
         "active": totalActiveCases,
         "recovered": totalRecovered,
-        "deaths": totalDeaths
+        "deaths": totalDeaths,
+        "mortalityRate":mortalityRate,
+        "recoveryRate":recoveryRate
     }
 
 
 }
-async function getStatsByState(state){
-    const data=await getData()
-    const latestData = await getLatestData(data)    
-    const stateData=latestData.filter((element)=>{
+async function getStatsByState(state) {
+    const data = await getData()
+    const latestData = await getLatestData(data)
+    const stateData = latestData.filter((element) => {
         return element.province === state.toUpperCase()
     })
 
-    return (stateData.length)? (stateData):("Invalid Stated passed")
+    return (stateData.length) ? (stateData) : ("Invalid Stated passed")
 }
 
-async function getDataByDate(date){
-    const data=await getData()
-       
-    const byDateData=data.filter((element)=>{
-        
-        return element.date === date 
+async function getDataByDate(date) {
+    const data = await getData()
+
+    const byDateData = data.filter((element) => {
+
+        return element.date === date
     })
 
-    return (byDateData.length)? (byDateData):("Invalid Date passed")
+    return (byDateData.length) ? (byDateData) : ("Invalid Date passed")
 }
 
 module.exports = {
@@ -91,8 +113,8 @@ module.exports = {
     getData: getData,
     downloadData: downloadData,
     getLatestData: getLatestData,
-    getTotalStats:getTotalStats,
-    getStatsByState:getStatsByState,
-    getDataByDate:getDataByDate
+    getTotalStats: getTotalStats,
+    getStatsByState: getStatsByState,
+    getDataByDate: getDataByDate
 
 }
