@@ -115,6 +115,7 @@ module.exports = {
     getLatestData: getLatestData,
     getTotalStats: getTotalStats,
     getStatsByState: getStatsByState,
-    getDataByDate: getDataByDate
+    getDataByDate: getDataByDate,
+    author: "Sharoz Tanveer"
 
 }
