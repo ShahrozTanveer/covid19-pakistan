@@ -12,7 +12,7 @@ async function example() {
     let state = await covid19.getStatsByState("punjab")
     console.log(state)
     //  //fetching stats by date format(dd-mm-yyyy)
-    let byDate = await covid19.getDataByDate("06-04-2020")
+    let byDate = await covid19.getDataByDate("09-04-2020")
     console.log(byDate)
 
 }
