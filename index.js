@@ -9,10 +9,9 @@ async function csvToJson() {
     return jsonArray
 }
 
-
 function downloadData() {
 
- console.log("updating");
+    console.log("updating");
     download(gitRepo, dataDir, (err) => {
         if (err) {
             console.log(err)
@@ -20,7 +19,7 @@ function downloadData() {
         } else {
             console.log("updated");
         }
-   
+
 
     })
 
@@ -28,22 +27,20 @@ function downloadData() {
 
 }
 
-
-
 function sleep(ms) {
-    
+
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+}
 async function getData() {
     downloadData()
-    
+
     return await sleep(3000)
-    .then(async() => {
+        .then(async () => {
             const data = await csvToJson();
             return data
-    })
-    
-   
+        })
+
+
 }
 
 async function getLatestData(data) {
@@ -71,18 +68,18 @@ async function getTotalStats() {
         totalRecovered += parseInt(element['recovered'])
         totalDeaths += parseInt(element['deaths'])
     })
-    const mortalityRate= (((totalDeaths/totalCases)*100).toFixed(1))+"%"
- 
-    const recoveryRate= (((totalRecovered/totalCases)*100).toFixed(1))+"%"
-    
+    const mortalityRate = (((totalDeaths / totalCases) * 100).toFixed(1)) + "%"
+
+    const recoveryRate = (((totalRecovered / totalCases) * 100).toFixed(1)) + "%"
+
     return {
         "date": date,
         "cases": totalCases,
         "active": totalActiveCases,
         "recovered": totalRecovered,
         "deaths": totalDeaths,
-        "mortalityRate":mortalityRate,
-        "recoveryRate":recoveryRate
+        "mortalityRate": mortalityRate,
+        "recoveryRate": recoveryRate
     }
 
 
@@ -93,8 +90,26 @@ async function getStatsByState(state) {
     const stateData = latestData.filter((element) => {
         return element.province === state.toUpperCase()
     })
+    if(stateData.length){
+        
+        const total = parseInt(stateData[0]['total_cases'])
+        const recovered = parseInt(stateData[0]['recovered'])
+        const deaths = parseInt(stateData[0]['deaths'])
+        const mortalityRate = (((deaths / total) * 100).toFixed(1)) + "%"
 
-    return (stateData.length) ? (stateData) : ("Invalid Stated passed")
+        const recoveryRate = (((recovered / total) * 100).toFixed(1)) + "%"
+        return {
+            "date": stateData[0]['date'],
+            "province": stateData[0]['province'],
+            "total_cases": stateData[0]['total_cases'],
+            "active": stateData[0]['active'],
+            "recovered": stateData[0]['recovered'],
+            "deaths": stateData[0]['deaths'],
+            "mortalityRate": mortalityRate,
+            "recoveryRate": recoveryRate
+        }
+    }
+    return  "Invalid Stated passed"
 }
 
 async function getDataByDate(date) {
