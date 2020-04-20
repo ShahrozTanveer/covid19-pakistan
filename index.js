@@ -90,8 +90,8 @@ async function getStatsByState(state) {
     const stateData = latestData.filter((element) => {
         return element.province === state.toUpperCase()
     })
-    if(stateData.length){
-        
+    if (stateData.length) {
+
         const total = parseInt(stateData[0]['total_cases'])
         const recovered = parseInt(stateData[0]['recovered'])
         const deaths = parseInt(stateData[0]['deaths'])
@@ -109,7 +109,7 @@ async function getStatsByState(state) {
             "recoveryRate": recoveryRate
         }
     }
-    return  "Invalid Stated passed"
+    return "Invalid Stated passed"
 }
 
 async function getDataByDate(date) {
@@ -120,7 +120,33 @@ async function getDataByDate(date) {
         return element.date === date
     })
 
-    return (byDateData.length) ? (byDateData) : ("Invalid Date passed")
+    if (byDateData.length) {
+
+        let dataToReturn = []
+        byDateData.forEach(state => {
+
+            const total = parseInt(state['total_cases'])
+            const recovered = parseInt(state['recovered'])
+            const deaths = parseInt(state['deaths'])
+
+            const mortalityRate = (((deaths / total) * 100).toFixed(1)) + "%"
+
+            const recoveryRate = (((recovered / total) * 100).toFixed(1)) + "%"
+            dataToReturn.push({
+                "date": state['date'],
+                "province": state['province'],
+                "total_cases": state['total_cases'],
+                "active": state['active'],
+                "recovered": state['recovered'],
+                "deaths": state['deaths'],
+                "mortalityRate": mortalityRate,
+                "recoveryRate": recoveryRate
+            })
+        })
+        return dataToReturn
+    }
+    return "Invalid Date passed"
+    // return (byDateData.length) ? (byDateData) : ("Invalid Date passed")
 }
 
 module.exports = {

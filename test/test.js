@@ -1,9 +1,9 @@
 const covid19 = require('../index.js')
 async function example() {
     //fetching latest dataset from github
-    const data=await covid19.getData()//contains whole dataset
+    const data = await covid19.getData() //contains whole dataset
     const latestData = await covid19.getLatestData(data)
-    console.log(latestData);//just contains today's data
+    console.log(latestData); //just contains today's data
 
     // //fetching latest stats 
     const latestStats = await covid19.getTotalStats()
