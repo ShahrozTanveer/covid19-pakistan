@@ -1,6 +1,6 @@
 {
   "name": "covid19-pakistan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Quick and easy way to get covid-19 in Pakistan updates.",
   "main": "index.js",
   "repository": {
