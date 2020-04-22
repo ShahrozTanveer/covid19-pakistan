@@ -146,7 +146,6 @@ async function getDataByDate(date) {
         return dataToReturn
     }
     return "Invalid Date passed"
-    // return (byDateData.length) ? (byDateData) : ("Invalid Date passed")
 }
 
 module.exports = {
@@ -157,6 +156,7 @@ module.exports = {
     getTotalStats: getTotalStats,
     getStatsByState: getStatsByState,
     getDataByDate: getDataByDate,
-    author: "Sharoz Tanveer"
+    author: "Sharoz Tanveer",
+    gitDataRepo: "https://github.com/ShahrozTanveer/covid-19-pakistan"
 
 }
