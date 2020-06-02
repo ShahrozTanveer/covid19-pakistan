@@ -1,4 +1,4 @@
-
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![NPM version](https://img.shields.io/npm/v/covid19-pakistan)](https://www.npmjs.com/package/covid19-pakistan)
 [![Contributors](https://img.shields.io/github/contributors/ShahrozTanveer/covid19-pakistan.svg)](https://github.com/github/ShahrozTanveer/covid19-pakistan/graphs/contributors)
 [![NPM Downloads](https://img.shields.io/npm/dt/covid19-pakistan.svg)](https://www.npmjs.com/covid19-pakistan)
