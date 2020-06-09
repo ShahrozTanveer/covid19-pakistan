@@ -2,6 +2,11 @@
 [![Contributors](https://img.shields.io/github/contributors/ShahrozTanveer/covid19-pakistan.svg)](https://github.com/github/ShahrozTanveer/covid19-pakistan/graphs/contributors)
 [![NPM Downloads](https://img.shields.io/npm/dt/covid19-pakistan.svg)](https://www.npmjs.com/covid19-pakistan)
 
+
+[![NPM Download Stats](https://nodei.co/npm/covid19-pakistan.png?downloads=true)](https://www.npmjs.com/package/covid19-pakistan)
+
+Please consider following this project's author, [Sharoz Tanveer](https://github.com/ShahrozTanveer), and consider starring the project to show your :heart: and support.
+
 # covid19-pakistan  v1.0.0(stable)🚀
 ## Import the latest Pakistan Covid-19 data in Javascript
 ### Get Latest Covid-19 Pakistan Data: https://github.com/ShahrozTanveer/covid-19-pakistan
@@ -40,3 +45,19 @@ example()
 **getTotalStats()** method will return Object that will contain latest stats of covid-19 (Pakistan)\
 **getStatsByState()** method requires state name and it will return object containg data of provided state.\
 **getDataByDate()** method requires date in format (dd-mm-yyyy) and it will return data from that given date.
+
+
+
+### Author
+
+**Sharoz Tanveer**
+
+* [LinkedIn Profile](https://www.linkedin.com/in/sharoztanveer/)
+* [GitHub Profile](https://github.com/ShahrozTanveer)
+* [Twitter Profile](https://twitter.com/saadtanveer3121)
+
+### License
+
+Copyright © 2020, [Sharoz Tanveer](https://github.com/ShahrozTanveer).
+Released under the [MIT License](LICENSE).
+
