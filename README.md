@@ -1,7 +1,7 @@
 [![NPM version](https://img.shields.io/npm/v/covid19-pakistan)](https://www.npmjs.com/package/covid19-pakistan)
 [![Contributors](https://img.shields.io/github/contributors/ShahrozTanveer/covid19-pakistan.svg)](https://github.com/github/ShahrozTanveer/covid19-pakistan/graphs/contributors)
 [![NPM Downloads](https://img.shields.io/npm/dt/covid19-pakistan.svg)](https://www.npmjs.com/covid19-pakistan)
-
+[![Gitter](https://badges.gitter.im/SharozTanveer/community.svg)](https://gitter.im/SharozTanveer/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 [![NPM Download Stats](https://nodei.co/npm/covid19-pakistan.png?downloads=true)](https://www.npmjs.com/package/covid19-pakistan)
 
